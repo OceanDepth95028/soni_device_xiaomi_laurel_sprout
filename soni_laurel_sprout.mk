@@ -19,8 +19,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common SoniUI stuff
+$(call inherit-product, vendor/soni/config/common_full_phone.mk)
+# $(call inherit-product, vendor/xperia/config.mk)
 
 # Inherit from laurel_sprout device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -28,8 +29,24 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := laurel_sprout
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := lineage_laurel_sprout
+PRODUCT_NAME := soni_laurel_sprout
 PRODUCT_MODEL := Mi A3
+CUSTOM_BUILD_TYPE := UNOFFICIAL
+
+TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_INCLUDE_WIFI_EXT := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+
+# Debug
+TARGET_DEBUG_ENABLE := true
+
+# ABI Checks
+SKIP_ABI_CHECKS := true
+
+# FOD Animation
+EXTRA_FOD_ANIMATIONS := true
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
